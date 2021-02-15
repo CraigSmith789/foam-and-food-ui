@@ -1,0 +1,22 @@
+
+.beer-logo{
+  height: 75px;
+  width: 75px;
+  align-content: center;
+
+}
+
+.pair {
+  text-align: center;
+  font-weight:bold;
+  border: grey solid 1px;
+  padding: 1rem;
+  width: 10rem;
+  height: 25rem;
+  display: inline-grid;
+  margin: 1rem 1rem;
+  box-shadow: 3px 4px #a89042;
+  background-color: burlywood;
+  /* background-image: url('src/images/beers.jpeg') */
+ 
+}
