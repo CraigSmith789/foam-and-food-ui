@@ -1,78 +1,58 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8" />
-    <title>Foam and Food</title>
-    <link rel="stylesheet" href="index.css" />
-  </head>
-  <body>
-    <h1>Foam and Food</h1>
 
-    <div class="container">
-      <form id="add-pair-form">
-        <h3>Add New Pairing</h3>
+<head>
+  <meta charset="utf-8" />
+  <title>Foam and Food</title>
+  <link rel="stylesheet" href="index.css" />
+</head>
 
-        <input
-          type="text"
-          name="name"
-          value=""
-          placeholder="Enter a beer name..."
-          class="input-text"
-        />
-        <br />
-        <input
-          type="text"
-          name="image"
-          value=""
-          placeholder="Enter a beer image URL..."
-          class="input-text"
-        />
-        <br />
-        <input
-          type="text"
-          name="style"
-          value=""
-          placeholder="Enter a beer style..."
-          class="input-text"
-        />
-        <br />
-        <input
-          type="text"
-          name="brewery"
-          value=""
-          placeholder="Enter a beer brewery..."
-          class="input-text"
-        />
-        <br />
-        <input
-          type="text"
-          name="abv"
-          value=""
-          placeholder="Enter a beer ABV..."
-          class="input-text"
-        />
-        <br />
-        <input
-          type="text"
-          name="food"
-          value=""
-          placeholder="Enter a food pairing..."
-          class="input-text"
-        />
-        <br />
-        <input
-          type="submit"
-          name="submit"
-          value="Create New Pair"
-          class="submit"
-        />
-      </form>
-    </div>
-    <p style="text-align:center">
-      <button id="new-pair-btn">Add a new pair</button>
-    </p>
+<body>
 
-    <div id="pair-collection"></div>
-    <script type="text/javascript" src="src/index.js"></script>
-  </body>
-  </html>
+
+  <h1>Georgia Brews</h1>
+  <label for="brew-selector">Select Brewer:</label>
+  <select name="brewer_id" id="brew-selector">
+    <option value="select" selected>-Select- </option>
+  </select>
+
+  <label for="style-selector">Select Style:</label>
+  <select name="style" id="style-selector">
+    <option value="select" selected>-Select- </option>
+  </select>
+
+  <div class="container">
+    <form id="add-pair-form">
+      <h3>Add New Beer</h3>
+      <label for="brew-dropdown">Brewer:</label>
+      <select name="brewer_id" id="brew-dropdown"> </select>
+      <br />
+      <input type="text" name="name" value="" placeholder="Enter a beer name..." class="input-text" />
+      <br />
+      <input type="text" name="image" value="" placeholder="Enter a beer image URL..." class="input-text" />
+      <br />
+      <input type="text" name="style" value="" placeholder="Enter a beer style..." class="input-text" />
+      <br />
+      <input type="text" name="abv" value="" placeholder="Enter a beer ABV..." class="input-text" />
+      <br />
+
+      <br><br>
+
+      <br />
+      <input type="submit" name="submit" value="Create New Beer" class="submit" />
+    </form>
+  </div>
+  <p style="text-align:center">
+    <!-- <button id="new-pair-btn">Add a new beer</button> -->
+  </p>
+
+  <div id="pair-collection"></div>
+
+  <script type="text/javascript" src="src/brewer.js"></script>
+  <script type="text/javascript" src="src/brewerApi.js"></script>
+  <script type="text/javascript" src="src/pairing.js"></script>
+  <script type="text/javascript" src="src/pairingApi.js"></script>
+  <script type="text/javascript" src="src/index.js"></script>
+</body>
+
+</html>
