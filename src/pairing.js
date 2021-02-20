@@ -54,9 +54,9 @@ class Pairing {
     const uniqueSet = new Set(styleTypes);
     const backToArray = [...uniqueSet]
     backToArray.forEach(function (style) {
-      const option = document.createElement('option')
-      option.innerText = style
-      styleSelect.append(option)
+      const choice = document.createElement('option')
+      choice.innerText = style
+      styleSelect.append(choice)
 
     })
 
@@ -72,35 +72,48 @@ class Pairing {
     const brewId = this.brewerId
     let found = Brewer.all.find(brewer => { return brewer.id === brewId })
     const pairDiv = document.querySelector("#pair-collection");
-    let h4 = document.createElement('h4')
-    h4.innerText = this.name
+    let beerName = document.createElement('div')
+    beerName.setAttribute('class', 'beer-name');
+    beerName.innerText = this.name
     let img = document.createElement('img')
     img.setAttribute('src', this.image)
     img.setAttribute('class', 'beer-logo')
-    let s = document.createElement('p')
+    let s = document.createElement('div')
     s.innerText = `Style: ${this.style}`
-    let b = document.createElement('p')
+    s.setAttribute('class', 'beer-metadata')
+
+    let b = document.createElement('div')
     if (found != undefined) {
 
       b.innerText = `Brewer: ${found.name}`
     }
-
-    let a = document.createElement('p')
+    b.setAttribute('class', 'beer-metadata')
+    let a = document.createElement('div')
     a.innerText = `ABV: ${this.abv}`
+    a.setAttribute('class', 'beer-metadata')
 
-    let x = document.createElement('p')
+    let x = document.createElement('div')
     x.innerText = `-`
     x.id = `${this.id}`
     x.classList.add("admin")
+
     let div = document.createElement('div')
     div.classList.add("pair")
     div.id = `pair-${this.id}`
-    div.append(img, h4, s, b, a, x)
+    div.append(img, beerName, s, b, a, x)
     pairDiv.appendChild(div)
     const delBtn = div.querySelector('.admin')
     delBtn.addEventListener('click', deletePair)
 
   };
+
+  static localRefresh(){
+    Pairing.all.forEach(function (pairing) {
+      pairing.attachToDom()
+
+    })
+    
+  }
 
 
 

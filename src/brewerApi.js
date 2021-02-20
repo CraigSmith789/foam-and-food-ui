@@ -12,6 +12,7 @@ class BrewerApi {
           const b = new Brewer(element)
           b.attachToDom()
           b.addToDropDown()
+          b.addToSort()
         })
       })
   }

@@ -3,49 +3,66 @@
 
 <head>
   <meta charset="utf-8" />
-  <title>Foam and Food</title>
+  <title>Georgia Brews</title>
   <link rel="stylesheet" href="index.css" />
 </head>
 
 <body>
 
+  <div class="header">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSvBU1kSfTS89eMBS4dQTk4kumwE-HNb_i7xg&usqp=CAU"
+        alt="Pour Two">
+    <div class="header-text">
+      <div class="title">Georgia Brews</div>
 
-  <h1>Georgia Brews</h1>
-  <label for="brew-selector">Select Brewer:</label>
-  <select name="brewer_id" id="brew-selector">
-    <option value="select" selected>-Select- </option>
-  </select>
+      <div class="filter-row">
+        
+        <label for="brew-selector"><b>Select Brewer:</b></label>
+        <select name="brewer_id" id="brew-selector">
+          <option value="select" selected>-Select- </option>
+        </select>
 
-  <label for="style-selector">Select Style:</label>
-  <select name="style" id="style-selector">
-    <option value="select" selected>-Select- </option>
-  </select>
+        <label for="style-selector"><b>OR Select Style:</b></label>
+        <select name="style" id="style-selector">
+          <option value="select" selected>-Select- </option>
+        </select>
 
+        <button id="reset-btn">RESET</button>
+      </div>
+    </div>
+    <div class="header-image">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT6DRkmW-Y_u1NUJTL0n4zD_1BqrYBasRRHbg&usqp=CAU"
+        alt="Three Beers">
+    </div>
+  </div>
   <div class="container">
-    <form id="add-pair-form">
+
+    <form name=newBeer id="add-pair-form" onsubmit="return validateForm()">
       <h3>Add New Beer</h3>
       <label for="brew-dropdown">Brewer:</label>
       <select name="brewer_id" id="brew-dropdown"> </select>
       <br />
+      <label for="name"><b>Beer Name:</b></label>
       <input type="text" name="name" value="" placeholder="Enter a beer name..." class="input-text" />
       <br />
+      <label for="image"><b>Image URL:</b></label>
       <input type="text" name="image" value="" placeholder="Enter a beer image URL..." class="input-text" />
       <br />
+      <label for="style"><b>Style:   </b></label>
       <input type="text" name="style" value="" placeholder="Enter a beer style..." class="input-text" />
       <br />
+      <label for="abv"><b>ABV:</b></label>
       <input type="text" name="abv" value="" placeholder="Enter a beer ABV..." class="input-text" />
-      <br />
-
-      <br><br>
-
       <br />
       <input type="submit" name="submit" value="Create New Beer" class="submit" />
     </form>
   </div>
-  <p style="text-align:center">
-    <!-- <button id="new-pair-btn">Add a new beer</button> -->
-  </p>
 
+
+
+
+
+  </p>
   <div id="pair-collection"></div>
 
   <script type="text/javascript" src="src/brewer.js"></script>

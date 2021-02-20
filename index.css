@@ -1,10 +1,11 @@
 
 .beer-logo{
-  height: 75px;
-  width: 75px;
-  border: gray solid 1px;
-  box-shadow: 3px 4px #a89042;
-
+  height: 200px;
+  width: 200px;
+  /* border: gray solid 1px; */
+  /* box-shadow: 3px 4px #a89042; */
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .pair {
@@ -12,13 +13,75 @@
   font-weight:bold;
   border: grey solid 1px;
   padding: 1rem;
-  width: 10rem;
+  width: 15rem;
   height: 25rem;
   display: inline-grid;
   margin: 1rem 1rem;
-  box-shadow: 3px 4px #a89042;
-  background-color: burlywood;
-  /* background-image: url('src/images/beers.jpeg') */
+  box-shadow: 3px 4px  #a26a42;
+  background-color: #bf997d;
+  animation-name: brewFade;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-timing-function: linear;
+  
  
 }
 
+.header {
+  background-color: #8B4513;
+  height: 200px;
+  width: auto;
+  color: white;
+  display: flex;
+  animation-name: brewFade;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-timing-function: linear;
+  
+}
+@keyframes brewFade {
+  from {background-color: #945731;}
+  to {background-color: rgb(238, 161, 123);}
+}
+
+.title{
+  padding-top: 20px;
+  padding-left: 10px;
+  font-size: 60px;
+  font-family: Didot, serif;
+  text-shadow: 1px 1px 2px black, 0 0 25px rgb(204, 202, 188), 0 0 5px rgb(207, 203, 196);
+}
+
+.filter-row{
+  padding-top: 60px;
+  padding-left: 10px;
+  font-size: 20px; 
+  font-family: Didot, serif;
+  text-shadow: 1px 1px 2px black, 0 0 25px rgb(204, 202, 188), 0 0 5px rgb(207, 203, 196);
+}
+
+.beer-name{
+  color: #8B4513;
+  font-weight: bold;
+  padding-top: 20px;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.header-image{
+  margin-left: auto;
+  padding-right: 10px;
+  padding-top: 10px;
+}
+
+.container{
+  background-color: rgb(218, 172, 134);
+  text-align: center;
+}
+#pair-collection{
+  background-color: rgb(226, 216, 211);
+}

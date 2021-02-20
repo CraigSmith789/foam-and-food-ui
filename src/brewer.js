@@ -17,12 +17,27 @@ class Brewer {
   }
 
   addToDropDown() {
+    
     const option = document.createElement('option')
     option.value = this.id
     option.innerText = this.name
     dropdown.append(option)
-    brewSelect.append(option)
+    console.log(this)
+    
   }
+
+  addToSort(){
+
+    const option = document.createElement('option')
+    option.value = this.id
+    option.innerText = this.name
+    brewSelect.append(option)
+    console.log(option.value)
+
+
+  }
+
+
   attachToDom() {
 
   }

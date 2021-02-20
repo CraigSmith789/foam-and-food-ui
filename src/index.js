@@ -6,6 +6,7 @@ const pairFormContainer = document.querySelector(".container");
 const dropdown = document.getElementById('brew-dropdown')
 const brewSelect = document.getElementById('brew-selector')
 const styleSelect = document.getElementById('style-selector')
+const resetBtn = document.getElementById("reset-btn");
 
 document.getElementById('brew-selector').onchange = function () {
   Pairing.filterByBrewer(this.value)
@@ -49,6 +50,42 @@ function deletePair(e) {
     .then(json => alert(json.message))
 
 }
+
+resetBtn.addEventListener("click", ResetClick);
+
+function ResetClick() {
+  document.getElementById("pair-collection").innerHTML = "";
+  Pairing.localRefresh()
+  console.log("RESET CLICKED")
+}
+
+function validateForm() {
+  var n = document.forms["newBeer"]["name"].value;
+  if (n == "") {
+    alert("Name must be filled out");
+    return false;
+  }
+
+  var i = document.forms["newBeer"]["image"].value;
+  if (i == "") {
+    alert("Image must be filled out");
+    return false;
+  }
+
+  var s = document.forms["newBeer"]["style"].value;
+  if (s == "") {
+    alert("Style must be filled out");
+    return false;
+  }
+
+  var a = document.forms["newBeer"]["abv"].value;
+  if (a == "") {
+    alert("ABV must be filled out");
+    return false;
+  }
+}
+
+
 document.addEventListener("keypress", function onEvent(event) {
   if (event.key === "+") {
     pairFormContainer.style.display = "block";
