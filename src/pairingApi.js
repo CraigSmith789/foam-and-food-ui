@@ -64,5 +64,22 @@ class PairingApi {
 
 
   }
+  static deletePair(e)  {
+    e.target.parentElement.remove()
+    const id = e.target.id
+    const configObj = {
+      method: 'DELETE',
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json"
+      }
+    }
+  
+    fetch(`http://localhost:3000/pairings/${id}`, configObj)
+      .then(r => r.json())
+      .then(json => alert(json.message))
+  
+  }
+  
 
 }

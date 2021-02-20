@@ -68,7 +68,7 @@ class Pairing {
     this.renderPair()
   }
   renderPair() {
-    // console.log(this)
+    
     const brewId = this.brewerId
     let found = Brewer.all.find(brewer => { return brewer.id === brewId })
     const pairDiv = document.querySelector("#pair-collection");
@@ -103,7 +103,7 @@ class Pairing {
     div.append(img, beerName, s, b, a, x)
     pairDiv.appendChild(div)
     const delBtn = div.querySelector('.admin')
-    delBtn.addEventListener('click', deletePair)
+    delBtn.addEventListener('click', PairingApi.deletePair)
 
   };
 
