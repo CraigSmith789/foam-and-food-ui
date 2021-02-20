@@ -37,7 +37,7 @@
   </div>
   <div class="container">
 
-    <form name=newBeer id="add-pair-form" onsubmit="return validateForm()">
+    <form name=newBeer id="add-pair-form" >
       <h3>Add New Beer</h3>
       <label for="brew-dropdown">Brewer:</label>
       <select name="brewer_id" id="brew-dropdown"> </select>
@@ -54,7 +54,7 @@
       <label for="abv"><b>ABV:</b></label>
       <input type="text" name="abv" value="" placeholder="Enter a beer ABV..." class="input-text" />
       <br />
-      <input type="submit" name="submit" value="Create New Beer" class="submit" />
+      <input type="submit" name="submit" value="Create New Beer" class="submit" onclick="return validateForm()" />
     </form>
   </div>
 

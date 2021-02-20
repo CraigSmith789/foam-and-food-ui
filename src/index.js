@@ -1,11 +1,11 @@
-const pairUrl = 'http://localhost:3000'
-const pairingApi = new PairingApi(pairUrl)
-const brewerApi = new BrewerApi(pairUrl)
-const form = document.querySelector("#add-pair-form")
+const pairUrl = 'http://localhost:3000';
+const pairingApi = new PairingApi(pairUrl);
+const brewerApi = new BrewerApi(pairUrl);
+const form = document.querySelector("#add-pair-form");
 const pairFormContainer = document.querySelector(".container");
-const dropdown = document.getElementById('brew-dropdown')
-const brewSelect = document.getElementById('brew-selector')
-const styleSelect = document.getElementById('style-selector')
+const dropdown = document.getElementById('brew-dropdown');
+const brewSelect = document.getElementById('brew-selector');
+const styleSelect = document.getElementById('style-selector');
 const resetBtn = document.getElementById("reset-btn");
 
 document.getElementById('brew-selector').onchange = function () {
@@ -23,18 +23,20 @@ pairFormContainer.style.display = "none";
 document.addEventListener("load", pairingApi.fetchPairs());
 document.addEventListener("load", brewerApi.fetchBrewers());
 
-form.addEventListener('submit', handleSubmit)
 
-function handleSubmit(e) {
-  console.log("js.12")
-  e.preventDefault()
-  pairingApi.createPairing()
+
+
+
+const handleSubmit = (e) => {
+  e.preventDefault();
+  pairingApi.createPairing();
+
 }
 
+form.addEventListener('submit', handleSubmit);
 
 
-
-function deletePair(e) {
+const deletePair = (e) => {
   e.target.parentElement.remove()
   const id = e.target.id
   const configObj = {
@@ -51,15 +53,17 @@ function deletePair(e) {
 
 }
 
-resetBtn.addEventListener("click", ResetClick);
 
-function ResetClick() {
+
+const ResetClick = () => {
   document.getElementById("pair-collection").innerHTML = "";
   Pairing.localRefresh()
-  console.log("RESET CLICKED")
+
 }
 
-function validateForm() {
+resetBtn.addEventListener("click", ResetClick);
+
+const validateForm = () => {
   var n = document.forms["newBeer"]["name"].value;
   if (n == "") {
     alert("Name must be filled out");

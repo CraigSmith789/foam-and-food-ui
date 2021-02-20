@@ -107,12 +107,12 @@ class Pairing {
 
   };
 
-  static localRefresh(){
+  static localRefresh() {
     Pairing.all.forEach(function (pairing) {
       pairing.attachToDom()
 
     })
-    
+
   }
 
 
